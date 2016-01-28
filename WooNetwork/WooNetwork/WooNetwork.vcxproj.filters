@@ -24,40 +24,40 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NetworkCommunication.h">
+    <ClInclude Include="Client\ClientApplication.h">
+      <Filter>Source Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="Client\ClientNetwork.h">
+      <Filter>Source Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="Server\ServerApplication.h">
+      <Filter>Source Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Server\ServerNetwork.h">
+      <Filter>Source Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\NetworkCommunication.h">
       <Filter>Source Files\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientNetwork.h">
-      <Filter>Source Files\Client</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientApplication.h">
-      <Filter>Source Files\Client</Filter>
-    </ClInclude>
-    <ClInclude Include="ServerApplication.h">
-      <Filter>Source Files\Server</Filter>
-    </ClInclude>
-    <ClInclude Include="ServerNetwork.h">
-      <Filter>Source Files\Server</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="NetworkCommunication.cpp">
-      <Filter>Source Files\Base</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ClientNetwork.cpp">
+    <ClCompile Include="Client\ClientApplication.cpp">
       <Filter>Source Files\Client</Filter>
     </ClCompile>
-    <ClCompile Include="ClientApplication.cpp">
+    <ClCompile Include="Client\ClientNetwork.cpp">
       <Filter>Source Files\Client</Filter>
     </ClCompile>
-    <ClCompile Include="ServerApplication.cpp">
+    <ClCompile Include="Server\ServerApplication.cpp">
       <Filter>Source Files\Server</Filter>
     </ClCompile>
-    <ClCompile Include="ServerNetwork.cpp">
+    <ClCompile Include="Server\ServerNetwork.cpp">
       <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\NetworkCommunication.cpp">
+      <Filter>Source Files\Base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-#include "NetworkCommunication.h"
+#include "Base\NetworkCommunication.h"
 
 int main()
 {

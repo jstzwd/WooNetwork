@@ -146,19 +146,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ClientApplication.h" />
-    <ClInclude Include="ClientNetwork.h" />
-    <ClInclude Include="NetworkCommunication.h" />
-    <ClInclude Include="ServerApplication.h" />
-    <ClInclude Include="ServerNetwork.h" />
+    <ClInclude Include="Client\ClientApplication.h" />
+    <ClInclude Include="Client\ClientNetwork.h" />
+    <ClInclude Include="Base\NetworkCommunication.h" />
+    <ClInclude Include="Server\ServerApplication.h" />
+    <ClInclude Include="Server\ServerNetwork.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ClientApplication.cpp" />
-    <ClCompile Include="ClientNetwork.cpp" />
+    <ClCompile Include="Client\ClientApplication.cpp" />
+    <ClCompile Include="Client\ClientNetwork.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="NetworkCommunication.cpp" />
-    <ClCompile Include="ServerApplication.cpp" />
-    <ClCompile Include="ServerNetwork.cpp" />
+    <ClCompile Include="Base\NetworkCommunication.cpp" />
+    <ClCompile Include="Server\ServerApplication.cpp" />
+    <ClCompile Include="Server\ServerNetwork.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
