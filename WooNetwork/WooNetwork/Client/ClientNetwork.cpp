@@ -63,6 +63,9 @@ namespace Woo {
 				WSACleanup();
 				return;
 			}
+
+			char value = 1;
+			setsockopt(m_clientSocket, IPPROTO_TCP, TCP_NODELAY, &value, sizeof(value));
 		}
 	}
 }

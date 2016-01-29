@@ -10,18 +10,17 @@ using namespace Client;
 Server::ServerApplication* testServer;
 ClientApplication* client;
 
-void serverLoop(void *) 
+void serverLoop(void*) 
 {
 	while(true)
 	{
 		testServer->UpdateConnection();
 	}
 }
-void clientLoop(void) 
+void clientLoop() 
 {
 	while(true)
 	{
-	
 	}
 }
 

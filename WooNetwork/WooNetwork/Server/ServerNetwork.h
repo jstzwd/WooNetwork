@@ -18,7 +18,7 @@ namespace Woo {
 			u_long m_blockingMode;
 			std::map<unsigned int, SOCKET> m_socketList;
 		public:	
-			ServerNetwork();
+			ServerNetwork(u_long blockingMode);
 			bool AcceptClient(unsigned int clientID);
 		};
 	}

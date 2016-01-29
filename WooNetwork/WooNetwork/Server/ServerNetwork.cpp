@@ -2,10 +2,12 @@
 
 namespace Woo {
 	namespace Server {
-		ServerNetwork::ServerNetwork()
+		ServerNetwork::ServerNetwork(u_long blockingMode)
+			:m_blockingMode(blockingMode)
 		{
 			WSADATA serverwsadata;
 			m_connectSocket = INVALID_SOCKET;
+			m_listenSocket = INVALID_SOCKET;
 			struct addrinfo* result = NULL;
 			struct addrinfo hints;
 
@@ -13,6 +15,9 @@ namespace Woo {
 			{
 				std::cout << "Failed to initialize the Winsock library!" << std::endl;
 				return;
+			}
+			else {
+				std::cout << "Succeeded to initialize the Winsock library!" << std::endl;
 			}
 
 			ZeroMemory(&hints, sizeof(hints));
@@ -66,7 +71,10 @@ namespace Woo {
 		{
 			m_connectSocket = accept(m_listenSocket, NULL, NULL);
 			if (m_connectSocket != INVALID_SOCKET) {
+				char value = 1;
+				setsockopt(m_connectSocket, IPPROTO_TCP, TCP_NODELAY, &value, sizeof(value));
 				m_socketList.insert(std::pair<unsigned int, SOCKET>(clientID, m_connectSocket));
+				std::cout << "Accept the client!" << std::endl;
 				return true;
 			}
 			return false;

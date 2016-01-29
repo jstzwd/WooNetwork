@@ -8,7 +8,7 @@
 namespace Woo {
 	namespace Client {
 
-#define DEFAULT_PORT "10000"
+#define DEFAULT_PORT "1000"
 
 		class ClientNetwork {
 		public:
