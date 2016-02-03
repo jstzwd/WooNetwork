@@ -9,8 +9,8 @@ namespace Woo {
 		class NetworkCommunication {
 		public:
 			//NetworkCommunication();
-			static int SendInfo(SOCKET s, char* info, int infoSize);
-			static int ReceiveInfo(SOCKET s, char* info, int infoSize);
+			static int SendData(SOCKET s, char* buffer, int infoSize);
+			static int ReceiveData(SOCKET s, char* buffer, int infoSize);
 		};
 	}
 }

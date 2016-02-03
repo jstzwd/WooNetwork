@@ -10,6 +10,7 @@ namespace Woo {
 	namespace Server {
 
 #define DEFAULT_PORT "1000"
+#define MAX_PACKAGE_SIZE 1000000
 
 		class ServerNetwork {
 		protected:			
@@ -20,6 +21,7 @@ namespace Woo {
 		public:	
 			ServerNetwork(u_long blockingMode);
 			bool AcceptClient(unsigned int clientID);
+			int ReceiveData(unsigned int clientID, char* receBuffer);
 		};
 	}
 }

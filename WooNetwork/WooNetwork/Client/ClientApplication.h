@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ClientNetwork.h"
+#include "..\Data\NetworkData.h"
+#include "..\Base\NetworkCommunication.h"
 
 namespace Woo {
 	namespace Client{

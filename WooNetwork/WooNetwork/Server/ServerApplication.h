@@ -1,5 +1,7 @@
 #pragma once
 #include "ServerNetwork.h"
+#include "..\Data\NetworkData.h"
+#include "..\Base\NetworkCommunication.h"
 
 namespace Woo{
 	namespace Server {
@@ -12,7 +14,7 @@ namespace Woo{
 			~ServerApplication();
 
 			void UpdateConnection();
-
+			void ReceiveDataFromClients();
 
 		};
 	}

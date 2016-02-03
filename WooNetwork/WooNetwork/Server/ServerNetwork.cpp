@@ -80,5 +80,20 @@ namespace Woo {
 			return false;
 
 		}
+		int ServerNetwork::ReceiveData(unsigned int clientID, char* receBuffer)
+		{
+			if(m_socketList.find(clientID)!=m_socketList.end())
+			{
+				SOCKET clientSocket = m_socketList[clientID];
+				int result = Base::NetworkCommunication::ReceiveData(clientSocket, receBuffer, MAX_PACKAGE_SIZE);
+				if(result==0)
+				{
+					std::cout << "Connect failed!" << std::endl;
+					closesocket(clientSocket);	
+				}
+				return result;
+			}
+			return 0;
+		}
 	}
 }

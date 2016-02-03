@@ -39,6 +39,9 @@
     <ClInclude Include="Base\NetworkCommunication.h">
       <Filter>Source Files\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Data\NetworkData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -58,6 +61,9 @@
     </ClCompile>
     <ClCompile Include="Base\NetworkCommunication.cpp">
       <Filter>Source Files\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\NetworkData.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

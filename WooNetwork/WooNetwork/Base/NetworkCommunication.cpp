@@ -2,13 +2,13 @@
 
 namespace Woo {
 	namespace Base {
-		int NetworkCommunication::SendInfo(SOCKET s, char* info, int infoSize)
+		int NetworkCommunication::SendData(SOCKET s, char* buffer, int infoSize)
 		{
-			return send(s, info, infoSize, 0);
+			return send(s, buffer, infoSize, 0);
 		}
-		int NetworkCommunication::ReceiveInfo(SOCKET s, char* info, int infoSize)
+		int NetworkCommunication::ReceiveData(SOCKET s, char* buffer, int infoSize)
 		{
-			return recv(s, info, infoSize, 0);
+			return recv(s, buffer, infoSize, 0);
 		}
 	}
 }
