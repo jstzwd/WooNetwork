@@ -17,11 +17,13 @@ namespace Woo {
 			SOCKET m_listenSocket;
 			SOCKET m_connectSocket;
 			u_long m_blockingMode;
-			std::map<unsigned int, SOCKET> m_socketList;
+			
 		public:	
+			std::map<unsigned int, SOCKET> m_socketList;
 			ServerNetwork(u_long blockingMode);
 			bool AcceptClient(unsigned int clientID);
 			int ReceiveData(unsigned int clientID, char* receBuffer);
+			void SendDataToAll(char* data, int size);
 		};
 	}
 }

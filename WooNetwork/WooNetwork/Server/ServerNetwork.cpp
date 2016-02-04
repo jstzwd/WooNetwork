@@ -95,5 +95,26 @@ namespace Woo {
 			}
 			return 0;
 		}
+		void ServerNetwork::SendDataToAll(char* data, int size)
+		{
+			SOCKET currentSocket;
+			std::map<unsigned int, SOCKET>::iterator myIterator;
+			int result;
+			for (myIterator = m_socketList.begin(); myIterator != m_socketList.end();myIterator++)
+			{
+				currentSocket = myIterator->second;
+				result = Base::NetworkCommunication::SendData(currentSocket, data, size);
+
+				if(result==SOCKET_ERROR)
+				{
+					std::cout << "Server failed to send data to client " << myIterator->first << std::endl;
+					closesocket(currentSocket);
+					continue;
+				}
+				else {
+					std::cout << "Server succeeded to send data to client " << myIterator->first << std::endl;
+				}
+			}
+		}
 	}
 }

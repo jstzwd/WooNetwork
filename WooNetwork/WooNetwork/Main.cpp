@@ -21,6 +21,7 @@ void clientLoop()
 {
 	while(true)
 	{
+		client->Update();
 	}
 }
 

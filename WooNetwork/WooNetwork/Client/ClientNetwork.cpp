@@ -67,5 +67,17 @@ namespace Woo {
 			char value = 1;
 			setsockopt(m_clientSocket, IPPROTO_TCP, TCP_NODELAY, &value, sizeof(value));
 		}
+		int ClientNetwork::ReceiveData(char* receBuffer)
+		{
+			int result = Base::NetworkCommunication::ReceiveData(m_clientSocket, receBuffer, MAX_PACKAGE_SIZE);
+			if(result==0)
+			{
+				std::cout << "This connection failed!" << std::endl;
+				closesocket(m_clientSocket);
+				WSACleanup();
+				return 0;
+			}
+			return result;
+		}
 	}
 }
