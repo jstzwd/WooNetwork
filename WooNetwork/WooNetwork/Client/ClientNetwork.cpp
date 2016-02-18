@@ -15,6 +15,9 @@ namespace Woo {
 				std::cout << "Failed to initialize the Winsock library!" << std::endl;
 				return;
 			}
+			else {
+				std::cout << "Succeeded to initialize the Winsock library!" << std::endl;
+			}
 
 			ZeroMemory(&hints, sizeof(hints));
 			hints.ai_family = AF_INET;

@@ -9,6 +9,8 @@ namespace Woo {
 			ACTION_EVENT = 1,
 		};
 		struct Package {
+			std::string m_chatString;
+
 			unsigned int m_packageType;
 
 			void Serialize(char* data);

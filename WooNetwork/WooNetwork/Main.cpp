@@ -9,12 +9,20 @@ using namespace Client;
 
 Server::ServerApplication* testServer;
 ClientApplication* client;
+std::string clientChatString;
+std::string serverChatString="hello";
 
 void serverLoop(void*) 
 {
 	while(true)
 	{
 		testServer->UpdateConnection();
+		//testServer->SendActionPackage(serverChatString);
+		//std::cin >> serverChatString;
+		if(!serverChatString.empty())
+		{
+			//testServer->SendActionPackage(serverChatString);
+		}
 	}
 }
 void clientLoop() 

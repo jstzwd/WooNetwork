@@ -9,6 +9,7 @@ namespace Woo {
 			char testPack[packageSize];
 
 			Data::Package testPackage;
+			testPackage.m_chatString = "I am connected";
 			testPackage.m_packageType = Data::PackageType::INIT_CONNECTION;
 			testPackage.Serialize(testPack);
 			
@@ -45,7 +46,8 @@ namespace Woo {
 					{
 					case Data::PackageType::ACTION_EVENT:
 						std::cout << "Client received ACTION EVENT data from server" << std::endl;
-						SendActionPackage();
+						std::cout << newPackage.m_chatString << std::endl;
+						//SendActionPackage();
 						break;
 					default:
 						std::cout << "No such package type!" << std::endl;

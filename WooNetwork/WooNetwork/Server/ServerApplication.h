@@ -17,7 +17,7 @@ namespace Woo{
 
 			void UpdateConnection();
 			void ReceiveDataFromClients();
-			void SendActionPackage();
+			void SendActionPackage(std::string& chatString);
 		};
 	}
 }

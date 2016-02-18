@@ -33,11 +33,13 @@ namespace Woo {
 					{
 					case Data::PackageType::INIT_CONNECTION:
 						std::cout << "Server received INIT CONNECTION data from client " << myIterator->first << std::endl;
-						SendActionPackage();
+						std::cout << newPackage.m_chatString << std::endl;
+						//SendActionPackage();
 						break;
 					case Data::PackageType::ACTION_EVENT:
 						std::cout << "Server received ACTION EVENT data from client " << myIterator->first << std::endl;
-						SendActionPackage();
+						std::cout << newPackage.m_chatString << std::endl;
+						//SendActionPackage();
 						break;
 					default:
 						std::cout << "No such package type!" << std::endl;
@@ -47,12 +49,13 @@ namespace Woo {
 				}
 			}
 		}
-		void ServerApplication::SendActionPackage()
+		void ServerApplication::SendActionPackage(std::string& chatString)
 		{
 			const unsigned int packageSize = sizeof(Data::Package);
 			char newData[packageSize];
 
 			Data::Package newPackage;
+			newPackage.m_chatString = chatString;
 			newPackage.m_packageType = Data::PackageType::ACTION_EVENT;
 			newPackage.Serialize(newData);
 
