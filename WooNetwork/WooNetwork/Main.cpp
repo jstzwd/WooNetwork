@@ -28,8 +28,17 @@ void clientLoop()
 
 int main()
 {
-	testServer = new Server::ServerApplication();
-	_beginthread(serverLoop, 0, (void*)12);
-	client = new ClientApplication();
-	clientLoop();
+	bool isServer = false;
+	std::cout << "Is Server?" << std::endl;
+	std::cin >> isServer;
+	if (isServer) {
+		testServer = new Server::ServerApplication();
+		serverLoop(0);
+	}
+	else {
+		client = new ClientApplication();
+		clientLoop();
+	}
+	//_beginthread(serverLoop, 0, (void*)12);
+	
 }
